@@ -1,10 +1,10 @@
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Main />
-      <Footer/>
+      <Home/>
+    
     </div>
   );
 }
