@@ -6,4 +6,5 @@ const cartRoute = Router()
 cartRoute.get("/", async (req, res) => {
 
 })
+
 module.exports = cartRoute
