@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchdata, fetchfilter } from "../redux/action";
 import Productcard from "./Productcard";
 import "./product.css";
+import { Link } from "react-router-dom";
 
 export const Products = () => {
   let productsData = useSelector((state) => state.productsData);
@@ -17,6 +18,7 @@ export const Products = () => {
  
   return (
     <div className="productbody">
+      <Link to="/cart">cart</Link>
       <div className="category">
         <p onClick={() =>{
           dispatch(fetchdata())

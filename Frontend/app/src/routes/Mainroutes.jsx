@@ -6,16 +6,15 @@ import Description from '../products/Description'
 import { Products } from '../products/Products'
 
 const Mainroutes = () => {
-//   let nav = useNavigate()
-//   useEffect(()=>{
-// nav("/products")
-//   },[])
+
   return (
     <div>
         <Routes>
-<Route path={"/"} element={<Products/>}  />
-<Route path='/cart' element={<Cart/>}/>
-<Route path='/products/description/:id' element={<Description/>}  />
+<Route path={"/"} element={<Products/>}/>
+<Route path={'/cart'} element={<Cart/>}/>
+<Route path={'/products/description/:id'}element={<Description/>}  />
+
+
 
         </Routes>
     </div>
