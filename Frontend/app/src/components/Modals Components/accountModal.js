@@ -2,10 +2,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import {faFacebook,faGoogle } from '@fortawesome/free-brands-svg-icons'
 import axios from "axios"
-
+import {useNavigate} from "react-router-dom"
 function Modal({ setOpenModal }) {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const navigate=useNavigate()
+  const nav = () => {
+    navigate("/auth")
+  }
   const handleSubmit = (e) => {
     e.preventDefault()
     const user = {
@@ -56,7 +60,7 @@ function Modal({ setOpenModal }) {
         <div style={{backgroundColor:'#DD4B39',height:'35px',marginTop:'5%',color:'white',cursor:'pointer',display:'flex',gap:'37%'}}>
           <p style={{margin:'2%',fontSize:'18px'}}>Sign In With Google</p><FontAwesomeIcon icon={faGoogle} style={{height:"30px",borderRadius:'5px', cursor:"pointer",marginTop:'2px'}} />
         </div>
-        <button className="createAccount">Create An Account</button>
+        <button onClick={nav} className="createAccount">Create An Account</button>
       </div>
      
   
