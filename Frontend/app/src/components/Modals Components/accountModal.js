@@ -2,13 +2,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import {faFacebook,faGoogle } from '@fortawesome/free-brands-svg-icons'
 import axios from "axios"
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import styled from "styled-components"
+const Button = styled.button`
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 40px;
+`;
 function Modal({ setOpenModal }) {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [login, setLogin] = React.useState(false);
   const navigate=useNavigate()
   const nav = () => {
     navigate("/auth")
+  }
+  const handleLogout = () => {
+    setLogin(!login);
+    localStorage.removeItem("Account")
+  }
+  React.useEffect(() => {
+    var data = JSON.parse(localStorage.getItem("Account"))
+    if (data) setLogin(true)
+  }, [])
+  if (login) {
+    var data = JSON.parse(localStorage.getItem("Account"))
   }
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -41,26 +61,26 @@ function Modal({ setOpenModal }) {
            Close X
           </button>
         </div>
-        <div className="inputBox">
-          <form onSubmit={(e) =>handleSubmit(e)}>
-          <label>Email Address*</label>
-          <br/>
-         <input onChange={(e)=>setEmail(e.target.value)} type="text"/>
-         <br/>
-         <label>Password*</label>
-          <br/>
-         <input onChange={(e)=>setPassword(e.target.value)} type="text"/>
-         <p>Forget Your Password?</p>
-        <input type="submit" className="loginButton" value="Login" />
+        {!login?<div className="inputBox">
+          <form onSubmit={(e) => handleSubmit(e)}>
+            <label>Email Address*</label>
+            <br />
+            <input onChange={(e) => setEmail(e.target.value)} type="text" />
+            <br />
+            <label>Password*</label>
+            <br />
+            <input onChange={(e) => setPassword(e.target.value)} type="text" />
+            <p>Forget Your Password?</p>
+            <input type="submit" className="loginButton" value="Login" />
           </form>
-        </div>
+        </div> : <Button onClick={() => handleLogout()}>LOGOUT</Button>}
         <div style={{backgroundColor:'#3B5998',height:'35px',marginTop:'5%',color:'white',cursor:'pointer',display:'flex',gap:'30%'}}>
           <p style={{margin:'2%',fontSize:'18px'}}>Sign In With Facebook</p><FontAwesomeIcon icon={faFacebook} style={{height:"30px",borderRadius:'5px', cursor:"pointer",marginTop:'2px'}} />
         </div>
         <div style={{backgroundColor:'#DD4B39',height:'35px',marginTop:'5%',color:'white',cursor:'pointer',display:'flex',gap:'37%'}}>
           <p style={{margin:'2%',fontSize:'18px'}}>Sign In With Google</p><FontAwesomeIcon icon={faGoogle} style={{height:"30px",borderRadius:'5px', cursor:"pointer",marginTop:'2px'}} />
         </div>
-        <button onClick={nav} className="createAccount">Create An Account</button>
+        <Button style={{height:'70px'}} onClick={nav} className="createAccount">Create An Account</Button>
       </div>
      
   
