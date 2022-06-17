@@ -1,9 +1,29 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import {faFacebook,faGoogle } from '@fortawesome/free-brands-svg-icons'
-
+import axios from "axios"
 
 function Modal({ setOpenModal }) {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const user = {
+      Email: email,
+      Password: password
+    }
+    const URL = "http://localhost:8080/auth/login"
+    axios.post(URL, user).then(print => {
+      if (print.data.Message == "Invalid credentials")
+        alert("Invalid Credentials");
+      else {
+        console.log(print.data)
+        localStorage.setItem("Account", JSON.stringify(print.data.valid[0]))
+        setOpenModal(false);
+        alert("Login successful")
+      }
+    })
+  }
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -18,16 +38,18 @@ function Modal({ setOpenModal }) {
           </button>
         </div>
         <div className="inputBox">
+          <form onSubmit={(e) =>handleSubmit(e)}>
           <label>Email Address*</label>
           <br/>
-         <input type="text"/>
+         <input onChange={(e)=>setEmail(e.target.value)} type="text"/>
          <br/>
          <label>Password*</label>
           <br/>
-         <input type="text"/>
+         <input onChange={(e)=>setPassword(e.target.value)} type="text"/>
          <p>Forget Your Password?</p>
+        <input type="submit" className="loginButton" value="Login" />
+          </form>
         </div>
-        <button className="loginButton">Login</button>
         <div style={{backgroundColor:'#3B5998',height:'35px',marginTop:'5%',color:'white',cursor:'pointer',display:'flex',gap:'30%'}}>
           <p style={{margin:'2%',fontSize:'18px'}}>Sign In With Facebook</p><FontAwesomeIcon icon={faFacebook} style={{height:"30px",borderRadius:'5px', cursor:"pointer",marginTop:'2px'}} />
         </div>
