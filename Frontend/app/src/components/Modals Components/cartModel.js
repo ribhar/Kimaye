@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import {faOpencart} from '@fortawesome/free-brands-svg-icons'
-import { faCartFlatbed, faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import {faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 
 
 function CartModal({ setCartModal }) {
+  const cartData=useSelector(state=> state.cartdata)
+  console.log(cartData)
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -18,12 +20,11 @@ function CartModal({ setCartModal }) {
            Close X
           </button>
         </div>
-       <div style={{marginTop:'10%',display:'flex'}}>
+       {cartData.length>0 ? (<div>done</div>): (<div style={{marginTop:'10%',display:'flex'}}>
         <FontAwesomeIcon icon={faCartPlus} style={{height:'30px',marginLeft:'10%',}}/><p style={{marginLeft:'5%',fontSize:'14px',marginTop:'5px'}}>No Products In The Cart</p>
-       </div>
-       <button  onClick={() => {
-              setCartModal(false);
-            }} className="ShoppingButton">Continue Shopping</button>
+       </div>)}
+      
+       
       </div>
      
   

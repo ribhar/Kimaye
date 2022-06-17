@@ -15,7 +15,9 @@ import GiftByKimaye from "../components/Image/GiftsByKimaye.png"
 import jazz from "../components/Image/jazz.png"
 import Looking from "../components/Image/Looking.png"
 import Footer from '../components/Footer'
+import {Link, useNavigate } from "react-router-dom"
 const Home = () => {
+  const navigate=useNavigate()
   return (
     <>
 {/*Navbar Starts Here...............................*/}
@@ -29,7 +31,8 @@ const Home = () => {
 
 {/*categories of products Starts Here...............................*/}
     <div>
-    <img src={Kimaye} style={{marginLeft:"30%",width:'500px',height:'100px',marginTop:'4%'}} alt="title"/>
+    
+  <img src={Kimaye} style={{marginLeft:"30%",width:'500px',height:'100px',marginTop:'4%'}} alt="title"/>
         <h1 style={{ fontFamily: "PT Sans", textAlign: "center",fontWeight:"normal" }}>
           A Handpicked and Curated Fruit offering
         </h1>
@@ -37,58 +40,59 @@ const Home = () => {
     <div className="landing-products">
       <div>
           <div className="land-product-image">
-          <img
+          <Link to="/products">    <img
             
             src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-1-min_720x.png?v=1614338437"
             alt="product"
-          />
+          /></Link>
           </div>
-         <img src={AllFruits} style={{marginLeft:'26%',height:"50px"}} alt="product"/>
+          <Link to="/products">    <img src={AllFruits} style={{marginLeft:'26%',height:"50px"}} alt="product"/></Link>
           <p style={{ textAlign: "center", marginTop: "12px" }}>
             Pick and choose from a wide range of delicious fruits
           </p>
-          <button className="landing-product-button">Shop Now</button>
+          <button onClick={()=>{navigate("/products")}} className="landing-product-button">Shop Now</button>
         </div>
         <div>
           <div className="land-product-image">
-          <img
+          <Link to="/products">    <img
             
             src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-3-min_900x.png?v=1614338730"
             alt="product"
-          />
+          /></Link>
           </div>
-          <img src={FreshCuts} style={{marginLeft:'26%',height:"50px"}} alt="product"/>
+          <Link to="/products">     <img src={FreshCuts} style={{marginLeft:'26%',height:"50px"}} alt="product"/></Link>
           <p style={{ textAlign: "center", marginTop: "12px" }}>
           We want to spoon-feed you… quite literally
           </p>
-          <button className="landing-product-button">Shop Now</button>
+          <button onClick={()=>{navigate("/products")}} className="landing-product-button">Shop Now</button>
         </div>
         <div>
           <div className="land-product-image">
-          <img
+          <Link to="/products">     <img
             
             src="https://cdn.shopify.com/s/files/1/0449/5225/6667/collections/recommended-2-min_900x.jpg?v=1614339080"
             alt="product"
-          />
+          /></Link>
           </div>
-          <img src={FruitsCombos} style={{marginLeft:'26%',height:"50px"}} alt="product"/>
+
+         <Link to="/products">   <img src={FruitsCombos} style={{marginLeft:'26%',height:"50px"}} alt="product"/></Link>
           <p style={{ textAlign: "center", marginTop: "12px" }}>
           Indulge in fruit combinations created by us
           </p>
-          <button className="landing-product-button">Shop Now</button>
+          <button onClick={()=>{navigate("/products")}} className="landing-product-button">Shop Now</button>
         </div>
         <div>
           <div className="land-product-image">
-          <img
+          <Link to="/products">      <img
             
             src="https://cdn.shopify.com/s/files/1/0449/5225/6667/files/2I8A6078_900x.jpg?v=1631516874"
             alt="product"
-          />
+          /></Link>
           </div><img src={GiftByKimaye} style={{marginLeft:'26%',height:"50px"}} alt="product"/>
           <p style={{ textAlign: "center", marginTop: "12px" }}>
           Gifts by Kimaye
           </p>
-          <button className="landing-product-button">Shop Now</button>
+          <button  onClick={()=>{navigate("/products")}} className="landing-product-button">Shop Now</button>
         </div>
       
       </div>

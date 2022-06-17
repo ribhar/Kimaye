@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const connection = require('./storage/db');
-const productRoute = require('./routes/product')
 const authRoute = require('./routes/auth')
-const cartRoute = require('./routes/cart')
+const cartRouter = require("./routes/cart")
+const productRouter = require("./routes/product");
 const cors = require("cors");
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
@@ -11,14 +11,16 @@ app.use(cors({
     //origin: ['http://localhost:3000']
 }))
 //<---------------------------------------------------------------->
+
+
 //Product page
-app.use("/product",productRoute)
+app.use("/products", productRouter);
 //<---------------------------------------------------------------->
 //Authentication page
 app.use("/auth",authRoute)
 //<---------------------------------------------------------------->
 //Cart page
-app.use("/cart",cartRoute)
+app.use("/cart",cartRouter);
 //<---------------------------------------------------------------->
 const PORT = process.env.PORT || 8080
 app.listen(PORT, async () => {

@@ -1,13 +1,24 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavigationBar from "./Navbar Components/NavigationBar";
 import { faCartShopping, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import Modal from "./Modals Components/accountModal";
 import CartModal from "./Modals Components/cartModel";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchcart } from "../redux/action";
 const Navbar = () => {
+  const navigate=useNavigate()
   const [cartmodal, setcartModalopen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const cartData=useSelector(state =>state.cartdata)
+  console.log(cartData.length)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchcart());
+  }, [dispatch]);
   return (
     <header>
       <div className="nav-area">
@@ -56,12 +67,13 @@ const Navbar = () => {
 {/*Navigation Cart Starts Here...............................*/}
           <FontAwesomeIcon
             icon={faCartShopping}
-            onClick={() => {
-              setcartModalopen(true);
+            onClick={() =>{
+              navigate("/cart")
+              //setcartModalopen(true);
             }}
             style={{ height: "23px", cursor: "pointer" }}
-          />
-{/*Navigation Cart Starts Here...............................*/}
+          /><span>{cartData.length}</span>
+{/*Navigation Cart ends Here...............................*/}
         </div>
 {/*Navigation Cart Starts Here...............................*/}
 
