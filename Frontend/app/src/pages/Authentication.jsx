@@ -12,6 +12,7 @@ const Title = styled.p`
   text-align: center;
   font-size: 35px;
   margin-bottom: 0px;
+  margin-top: 30px;
 `;
 const Container = styled.div`
   display: flex;
@@ -37,6 +38,7 @@ const Button = styled.button`
   color: white;
   padding: 10px 20px;
   cursor: pointer;
+  margin-top: 40px;
 `;
 function Authentication() {
   const [auth, setAuth] = React.useState(true);
@@ -151,16 +153,17 @@ function Authentication() {
             <p style={{ color: "white", fontSize: "16px" }}>/ My Account</p>
           </div>
         </Green>
-        <Child style={{ width: "50%", margin: "auto" }}>
+        <Child style={{ width: "50%", margin: "auto", height: "200px" }}>
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
+                justifyContent: "center",
+              marginTop: "30px"
             }}
           >
-            <h3 style={{ color: "#437110 ", marginRight: "5px" }}>Name</h3>
-            <p>{data.FirstName}</p>
+            <h1 style={{ color: "#437110 ", marginRight: "5px" }}>Name</h1>
+            <h1>{data.FirstName}</h1>
           </div>
           <div
             style={{
@@ -169,8 +172,8 @@ function Authentication() {
               justifyContent: "center",
             }}
           >
-            <h3 style={{ color: "#437110 ", marginRight: "5px" }}>Email</h3>
-            <p>{data.Email}</p>
+            <h1 style={{ color: "#437110 ", marginRight: "5px" }}>Email</h1>
+            <h1>{data.Email}</h1>
           </div>
           <Button onClick={() => handleLogout()}>LOGOUT</Button>
         </Child>
