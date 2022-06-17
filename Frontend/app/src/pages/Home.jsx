@@ -19,9 +19,7 @@ const Home = () => {
   return (
     <>
 {/*Navbar Starts Here...............................*/}
-    <div style={{backgroundColor:'#437111',height:'38px',width:'100%',paddingTop:'9px',color:'white',fontSize:'14px',textAlign: "center"}}>Delivering in Mumbai and Delhi | Same day delivery!
-    </div>
-    <div style={{position:'relative',zIndex:'2',backgroundColor:'white'}}><Navbar/></div>
+   
     <div style={{marginTop:'1.5%'}}>
    <Crousel/>
    <button style={{width:'110px',height:'40px',borderRadius:'19px',border:"none",backgroundColor:"#98CB4C",color:"white",position:'relative',left:'10%',top:'-160px',zIndex:'2'}}>Shop Now</button>
@@ -204,11 +202,7 @@ const Home = () => {
       </div>
 {/*InstagramImage Crousel div Ends Here...............................*/}
 
-{/*Footer Starts Here...............................*/}
-      <div>
-        <Footer/>
-      </div>
-{/*Footer Ends Here...............................*/}
+
     </>
   )
 }
