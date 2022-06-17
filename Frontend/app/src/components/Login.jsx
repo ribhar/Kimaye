@@ -18,7 +18,7 @@ const Image = styled.img`
   margin-bottom: 10px;
   cursor: pointer;
 `;
-function Login() {
+function Login({login,setLogin}) {
   const [color1, setColor] = React.useState("gray")
   const [fb, setFb] = React.useState(1)
   const [google, setGoogle] = React.useState(1)
@@ -32,9 +32,16 @@ function Login() {
       Password: password
     }
     setData(user)
-    const URL=""
-    const { print } = axios.post(URL, data)
-    console.log(print)
+    const URL = "http://localhost:8080/auth/login"
+    axios.post(URL, user).then(print => {
+      if (print.data.Message == "Invalid credentials")
+        alert("Invalid Credentials");
+      else {
+        console.log(print.data)
+        localStorage.setItem("Account", JSON.stringify(print.data.valid[0]))
+        setLogin(!login)
+      }
+    })
   }
   return (
     <div

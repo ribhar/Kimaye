@@ -33,9 +33,12 @@ function Register() {
            Password:password
         }
       setData(user)
-        const URL = "/signup";
-      const { print } = axios.post(URL, data)
-      console.log(print)
+        const URL = "http://localhost:8080/auth/signup";
+      axios.post(URL, data)
+      .then(print=> {
+    console.log(print.data)
+      })
+      
     }
   return (
     <Container
