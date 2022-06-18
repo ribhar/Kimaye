@@ -106,7 +106,8 @@ const Cart = () => {
   // const [voucher, setVoucher] = React.useState("")
   const [eye,setEye]=useState(0)
   const [cross, setcross] = useState(false)
-  const cartdata = useSelector((state) => state.cartdata);
+  const [cartdata, setCartdata] = useState([])
+  const allCartdata = useSelector((state) => state.cartdata);
   const totalprice = useSelector((state) => state.totalprice);
   console.log(cartdata, totalprice);
   const navigate = useNavigate();
@@ -115,6 +116,18 @@ const Cart = () => {
   useEffect(() => {
     dispatch(fetchcart());
   }, [dispatch]);
+  useEffect(() => {
+    const account = JSON.parse(localStorage.getItem("Account"))
+    if (account) {
+      const Email = account.Email
+      const generatedData = allCartdata.filter(i => i.Email == Email)
+      setCartdata(generatedData)
+    }
+    else {
+      alert("Login to Continue")
+      navigate("/auth")
+    }
+  },[allCartdata])
 
   const [isHovering, setIsHovering] = useState(false);
 

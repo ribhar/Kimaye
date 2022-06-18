@@ -39,6 +39,7 @@ function Login({login,setLogin}) {
       else {
         console.log(print.data)
         localStorage.setItem("Account", JSON.stringify(print.data.valid[0]))
+        localStorage.setItem("token", JSON.stringify(print.data.token));
         setLogin(!login)
       }
     })

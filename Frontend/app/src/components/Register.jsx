@@ -18,7 +18,7 @@ const Input = styled.input `
 const Label = styled.label`
 font-size: 16px;
 `
-function Register() {
+function Register({auth,setAuth}) {
     const [data, setData] = React.useState({})
     const [first, setFirst] = React.useState("")
     const [last, setLast] = React.useState("");
@@ -36,7 +36,9 @@ function Register() {
         const URL = "http://localhost:8080/auth/signup";
       axios.post(URL, data)
       .then(print=> {
-    console.log(print.data)
+        console.log(print.data)
+        alert("Registration Successfull")
+        setAuth(!auth)
       })
       
     }

@@ -17,19 +17,18 @@ function Modal({ setOpenModal }) {
   const [login, setLogin] = React.useState(false);
   const navigate=useNavigate()
   const nav = () => {
+    setOpenModal(false);
     navigate("/auth")
   }
   const handleLogout = () => {
     setLogin(!login);
     localStorage.removeItem("Account")
+    localStorage.removeItem("token");
   }
   React.useEffect(() => {
     var data = JSON.parse(localStorage.getItem("Account"))
     if (data) setLogin(true)
   }, [])
-  if (login) {
-    var data = JSON.parse(localStorage.getItem("Account"))
-  }
   const handleSubmit = (e) => {
     e.preventDefault()
     const user = {
@@ -43,6 +42,7 @@ function Modal({ setOpenModal }) {
       else {
         console.log(print.data)
         localStorage.setItem("Account", JSON.stringify(print.data.valid[0]))
+        localStorage.setItem("token", JSON.stringify(print.data.token));
         setOpenModal(false);
         alert("Login successful")
       }

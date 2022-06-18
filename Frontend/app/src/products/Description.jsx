@@ -4,15 +4,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AddToCart, fetchdes, incordec } from "../redux/action";
 import "./description.css";
+import {useNavigate} from "react-router-dom"
 
 const Description = () => {
+  const [Email, setEmail] = React.useState(false)
+  const navigate= useNavigate();
   const { id } = useParams();
   const desData = useSelector((state) => state.desData);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchdes(id));
-  }, [id,dispatch]);
-  console.log(desData);
+  }, [id, dispatch]);
+  const handleAddCart = () => {
+    var t = JSON.parse(localStorage.getItem("Account"));
+    if (t) setEmail(t.Email);
+    else {
+      alert("Login To Continue");
+      navigate("/auth");
+    } 
+    const generated = desData
+    generated.Email = Email
+    dispatch(AddToCart(generated));
+  }
+
   return (
     <div className="desbody">
      
@@ -51,7 +65,7 @@ const Description = () => {
                 dispatch(incordec(desData._id,1))
               }}>+</button>
             </div>
-            <button className="addcartbtn" onClick={()=>dispatch(AddToCart(desData))}>Add to cart</button>
+            <button className="addcartbtn" onClick={() => handleAddCart()}>Add to cart</button>
           </div>
         </div>
       </div>
