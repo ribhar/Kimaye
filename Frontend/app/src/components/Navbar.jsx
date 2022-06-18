@@ -68,8 +68,8 @@ const Navbar = () => {
           <FontAwesomeIcon
             icon={faCartShopping}
             onClick={() =>{
-              navigate("/cart")
-              //setcartModalopen(true);
+              //navigate("/cart")
+              setcartModalopen(true);
             }}
             style={{ height: "23px", cursor: "pointer" }}
           /><span>{cartData.length}</span>
