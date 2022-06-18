@@ -1,9 +1,30 @@
-const productM = require('../models/productM')
-const { Router } = require('express')
+const { Router } = require("express");
+const product = require("../models/productM");
 
-const productRoute = Router()
+const productRouter = Router();
 
-productRoute.get("/", async (req, res) => {
+productRouter.get("/get", async (req, res) => {
+  let productitems = await product.find();
+  res.status(201).send(productitems);
+});
 
-})
-module.exports = productRoute
+productRouter.get("/get/:id", async (req, res) => {
+  const { id } = req.params;
+  let item = await product.findById(id);
+  res.send(item);
+});
+
+productRouter.get("/get/category/:category", async (req, res) => {
+  const category = req.params;
+  let item = await product.find(category);
+  res.send(item);
+});
+
+productRouter.patch("/patch/qty", async (req, res) => {
+  const { count } = req.body;
+  const { id } = req.query;
+  let inc = await product.findByIdAndUpdate(id, { $inc: { qty: count } });
+  res.send(inc);
+});
+
+module.exports = productRouter;

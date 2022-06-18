@@ -1,54 +1,82 @@
+import axios from "axios";
+export const GETDATA = "GETDATA";
+export const DESDATA = "DESDATA";
+export const FILTER = "FILTER";
+export const CARTDATA = "CARTDATA"
+export const SETPRICE = "SETPRICE";
+export const getdata = (payload) => ({
+  type: GETDATA,
+  payload,
+});
 
-import { SORT_DATA } from "./actiontypes";
-import { DESCRIPTION_DATA } from "./actiontypes";
-import { CART_DATA, DELETE_CART_DATA,INCREASE_QTY,DECREASE_QTY, SET_COUNT, LOGIN} from "./actiontypes";
+export const desdata = (payload) => ({
+  type: DESDATA,
+  payload,
+});
 
-export const sorted_data= (payload)=>{
-    return {
-        type:SORT_DATA,
-        payload,
+export const filterdata = (payload) => ({
+  type: FILTER,
+  payload,
+});
+
+export const cartdata = (payload)=>({
+  type : CARTDATA,
+  payload,
+})
+export const setPrice = (payload) => ({
+  type: SETPRICE,
+  payload,
+})
+// ----------------network calls -------------------------------------//
+export const fetchdata = () => async (dispatch) => {
+  let res = await axios.get("http://localhost:8080/products/get");
+  dispatch(getdata(res.data));
+};
+
+export const fetchdes = (payload) => async (dispatch) => {
+  let res = await axios.get(`http://localhost:8080/products/get/${payload}`);
+  dispatch(desdata(res.data));
+};
+
+export const fetchfilter = (payload) => async (dispatch) => {
+  let res = await axios.get(
+    `http://localhost:8080/products/get/category/${payload}`
+  );
+  dispatch(filterdata(res.data));
+};
+
+export const incordec = (payload, count) => async (dispatch) => {
+  let res = await axios.patch(
+    `http://localhost:8080/products/patch/qty?id=${payload}`,
+    {
+      count: count,
     }
-  
-}
-export const description_data = (payload)=>{
-    return{
-        type:DESCRIPTION_DATA,
-        payload
-    }
+  );
+  dispatch(fetchdes(payload));
+};
+
+export const fetchcart=()=>async (dispatch)=>{
+let res = await axios.get("http://localhost:8080/cart/get") 
+console.log(res.data)
+dispatch(cartdata(res.data))
 }
 
-export const delete_cart_data = (payload) => {
-    return {
-        type: DELETE_CART_DATA,
-        payload
-    }
+export const AddToCart = (payload) => async (dispatch)=>{
+  let res = await axios.post(`http://localhost:8080/cart/post`,payload)
+  console.log(res)
+  dispatch(fetchcart())
 }
-export const increase_qty = (payload) => {
-    return {
-        type: INCREASE_QTY,
-        payload
-    }
+
+export const deletecart = (payload)=> async (dispatch)=>{
+let res = await axios.delete(`http://localhost:8080/cart/delete/${payload}`)
+console.log(res)
+dispatch(fetchcart())
 }
-export const decrease_qty = (payload) => {
-    return {
-        type: DECREASE_QTY,
-        payload
-    }
-}
-export const cart_data = (payload) => {
-    return {
-        type: CART_DATA,
-        payload
-    }
-}
-export const setCount = (payload) => {
-    return {
-        type: SET_COUNT,
-        payload
-    }
-}
-export const loginaction = () => {
-    return {
-        type: LOGIN,
-    }
+
+export const cartqty = (payload,count) => async (dispatch)=>{
+let res = await axios.patch(`http://localhost:8080/cart/patch/qty?id=${payload}`,{
+  count : count
+})
+console.log(res)
+dispatch(fetchcart())
 }

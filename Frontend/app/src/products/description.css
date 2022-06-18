@@ -1,0 +1,221 @@
+
+
+.upperlink {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.upperlink > img {
+  margin-top: 4px;
+  height: 14px;
+}
+.upperlink > p {
+  font-size: 14px;
+  color: #1b1919;
+  margin-right: 5px;
+  text-decoration: none;
+  font-style: normal;
+}
+.uppertitle {
+  color: #9e9e9e;
+}
+
+.descontainer {
+  position: relative;
+  width: 80%;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.poster > img {
+  object-fit: contain;
+  width: 550px;
+  height: 320px;
+}
+
+.destitle {
+  font-family: "PT Sans";
+  font-weight: 700;
+  color: #222;
+  font-size: 2.34em;
+  letter-spacing: 0.05em;
+  line-height: 1.02;
+}
+.des {
+  color: #222;
+  font-family: PT Sans, sans-serif;
+  font-size: 1.3em;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  font-weight: 400;
+}
+.origin {
+  color: #222;
+  font-family: PT Sans, sans-serif;
+  font-size: 1.3em;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  font-weight: 400;
+}
+.desprice1 {
+  font-size: 28px;
+  color: #98cb4c;
+}
+.desprice2 {
+  font-size: 44px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: crimson;
+}
+
+.qtybtn {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+.qtybtn > button {
+  cursor: pointer;
+  border: none;
+  height: 100%;
+  background-color: white;
+  border: 0.2px solid grey;
+}
+.qtybtn > p {
+  border: none;
+  display: flex;
+  align-items: center;
+  height: 96%;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: white;
+  border-top: 0.2px solid grey;
+  border-bottom: 0.2px solid grey;
+}
+.btns {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.addcartbtn {
+  cursor: pointer;
+  border: none;
+  border: 0.1px solid gray;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.packlogo {
+  object-fit: fill;
+  border: 0.5px solid gray;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.despack {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ----------texturediv--------------- */
+.texturediv {
+  height: 600px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  background: #eac137;
+  background: linear-gradient(
+    to bottom,
+    transparent 1.5em,
+    #eac137 1.5em,
+    #eac137 calc(100% - 1.5em)
+  );
+}
+
+.texturediv:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/blog-top-cut.png?v=1599102918");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: transparent;
+  background-size: cover;
+  top: 0;
+  height: 2.1em;
+}
+.texturediv {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.relateddiv {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.related {
+  margin-top: 20px;
+  justify-content: center;
+  background-color: white;
+  height: 350px;
+  width: 350px;
+  border-radius: 30px;
+}
+.related > img {
+  cursor: pointer;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.relateprice {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #cd171f;
+  font-size: 1.6em;
+  margin-top: 5px;
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+.relatetitle {
+  text-align: center;
+  font-family: "PT Sans";
+  font-size: 1.1em;
+  font-weight: 400;
+  margin-top: 18px;
+  color: #252222;
+}
+.relatebtn {
+  cursor: pointer;
+  display: flex;
+  margin: auto;
+  border: none;
+  background-color: #98cb4c;
+  font-size: 12px;
+  line-height: 16px;
+  border-width: 2px;
+  font-weight: 600;
+  color: #fff;
+  padding: 10px 15px;
+}
+.related > img:hover,
+.related > img:focus {
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+
+/* overlay-texture  */

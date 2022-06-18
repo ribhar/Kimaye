@@ -1,38 +1,292 @@
-.App {
-  text-align: center;
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  
+  background-color:#EEEEEA;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  height: 58px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  color: #212529;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-area {
+  background-color:#EEEEEA;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 70px;
+  gap:20%;
+  padding-left: 5%;
+}
+aside input {
+  padding: 1rem;
+  width: 200px;
+}
+
+.open {
+  display: block;
+  transition: display 0.35s ease-out;
+}
+
+.close {
+  display: none;
+  transition: display 0.35s ease-out;
+}
+
+
+
+.menus {
+  display: flex;
+  list-style: none;
+}
+.menu-items {
+  position: relative;
+  
+  font-size: 14px;
+}
+
+.menu-items a {
+  display: block;
+  font-size: inherit;
+  
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu-items button {
+  color: inherit;
+  font-size: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+.menu-items a,
+.menu-items button {
+  text-align: left;
+  padding: 0.7rem 1rem;
+}
+
+.arrow::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.28em;
+  vertical-align: 0.09em;
+  border-top: 0.42em solid;
+  border-right: 0.32em solid transparent;
+  border-left: 0.32em solid transparent;
+}
+
+.dropdown {
+  position: absolute;
+  box-shadow: 0 10px 15px -3px #EEEEEA,
+    0 4px 6px -2px #EEEEEA;
+  z-index: 9999;
+  min-width: 15rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+.dropdown .dropdown-submenu {
+  position: absolute;
+  right: 100%;
+  top: -7px;
+}
+
+.nav-icons{
+  margin-left: 3%;
+  display:flex;
+  gap:15px;
+  padding-top: 1%;
+}
+.landing-products{
+ 
+  width:95%;
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  margin-left: 5%;
+ }
+.land-product-image{
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  width: 450px;
+  width:90%;
+  height:450px;
+  margin-top: 20%;
+  border-radius: 30px;
+  
+}
+.land-product-image img {
+  max-width: 100%;
+  transition: all 0.3s;
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+}
+.land-product-image img:hover{
+  transform: scale(1.1);
+}
+
+.landing-product-button{
+  background-color:#CD171F;
+  border:none;
+  color:white;
+  width:130px;
+  height:40px;
+  border-radius:20px;
+  margin-top: 20px;
+  margin-left: 40%;
+  cursor: pointer;
+}
+.KnowButton{
+  border:none;
+  color:black;
+  width:150px;
+  height:50px;
+  border-radius:25px;
+  margin-top: 15%;
+  margin-left:-56%;
+  font-size:18px;
+  cursor: pointer;
+  
+}
+.KnowButton:hover{
+  background-color:grey;
+ 
+}
+.instaImages{
+  width:250px;
+  border-radius:20px;
+  cursor: pointer;
+  height:auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.instaImages:hover{
+ opacity: 1;
+ }
+
+.footerOption{
+  font-weight:550;
+  font-size:18px;
+  cursor: pointer;
+}
+.footerOption:hover{
+   color:rgb(205,23,31);
+   transition: 100ms;
+}
+
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top:6.25%;
+  left:75%;
+}
+
+.modalContainer {
+  width: 350px;
+  height: 650px;
+  background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+ }
+
+.modalContainer .title {
+  display: inline-block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.titleCloseBtn {
+  background-color:black;
+  height:80px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  
+}
+
+.titleCloseBtn button {
+  background-color: transparent;
+  border: none;
   color: white;
+  font-size: 25px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+
+.createAccount{
+  margin-top:4%;
+  width:40%;
+  height: 40px;
+  margin-left: 28%;
+  background-color:transparent;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.inputBox{
+  padding-left: 8px;
+  padding-top: 4%;
+}
+.inputBox>label {
+font-size:14px
+}
+.inputBox input {
+width:90%;
+height:40px;
+margin-bottom: 15px;
+}
+.inputBox p{
+  font-size:14px;
+  margin-left:3px
+}
+.loginButton{
+  margin-left:3%;
+  width:90%;
+  height:40px;
+  cursor: pointer;
+  font-size:18px;
+  margin-top: 5%;
+}
+.loginButton:hover{
+  background-color:black;
+  color:white
+}
+
+.ShoppingButton{
+  width:90%;
+  height:40px;
+  border: none;
+  margin-left: 5%;
+  margin-top:10%;
+  cursor:pointer;
+  font-size:16px;
+}
+.ShoppingButton:hover{
+  background-color:black;
+  color:white
 }
