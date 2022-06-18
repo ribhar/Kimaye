@@ -3,7 +3,7 @@ export const GETDATA = "GETDATA";
 export const DESDATA = "DESDATA";
 export const FILTER = "FILTER";
 export const CARTDATA = "CARTDATA"
-
+export const SETPRICE = "SETPRICE";
 export const getdata = (payload) => ({
   type: GETDATA,
   payload,
@@ -23,7 +23,10 @@ export const cartdata = (payload)=>({
   type : CARTDATA,
   payload,
 })
-
+export const setPrice = (payload) => ({
+  type: SETPRICE,
+  payload,
+})
 // ----------------network calls -------------------------------------//
 export const fetchdata = () => async (dispatch) => {
   let res = await axios.get("http://localhost:8080/products/get");

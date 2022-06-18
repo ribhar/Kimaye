@@ -17,14 +17,20 @@ const Description = () => {
   }, [id, dispatch]);
   const handleAddCart = () => {
     var t = JSON.parse(localStorage.getItem("Account"));
-    if (t) setEmail(t.Email);
+    if (t)
+    {
+      setEmail(t.Email);
+      const generated = desData
+    generated.Email = t.Email
+    dispatch(AddToCart(generated));
+    alert("Item Added to cart successfully")
+    navigate("/products")
+    }  
     else {
       alert("Login To Continue");
       navigate("/auth");
     } 
-    const generated = desData
-    generated.Email = Email
-    dispatch(AddToCart(generated));
+    
   }
 
   return (

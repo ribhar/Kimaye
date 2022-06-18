@@ -20,7 +20,7 @@ const Navbar = () => {
     dispatch(fetchcart());
   }, [dispatch]);
   return (
-    <header>
+    <header style={{ marginBottom: "30px" }}>
       <div className="nav-area">
         <div>
           <NavigationBar />
@@ -45,16 +45,16 @@ const Navbar = () => {
             />
             <p style={{ marginTop: "5px" }}>Delhi</p>
           </div>
-{/*Navigation Search box Starts Here...............................*/}
+          {/*Navigation Search box Starts Here...............................*/}
           <div>
             <FontAwesomeIcon
               icon={faSearch}
               style={{ height: "23px", cursor: "pointer" }}
             />
           </div>
-{/*Navigation Search box Ends Here...............................*/}
+          {/*Navigation Search box Ends Here...............................*/}
 
-{/*Navigation Account Starts Here...............................*/}
+          {/*Navigation Account Starts Here...............................*/}
           <FontAwesomeIcon
             onClick={() => {
               setModalOpen(true);
@@ -62,29 +62,29 @@ const Navbar = () => {
             icon={faUser}
             style={{ height: "23px", cursor: "pointer" }}
           />
-{/*Navigation Account Ends Here...............................*/}
+          {/*Navigation Account Ends Here...............................*/}
 
-{/*Navigation Cart Starts Here...............................*/}
+          {/*Navigation Cart Starts Here...............................*/}
           <FontAwesomeIcon
             icon={faCartShopping}
-            onClick={() =>{
-              navigate("/cart")
+            onClick={() => {
+              navigate("/cart");
               //setcartModalopen(true);
             }}
             style={{ height: "23px", cursor: "pointer" }}
-          /><span>{cartData.length}</span>
-{/*Navigation Cart ends Here...............................*/}
+          />
+          {/*Navigation Cart ends Here...............................*/}
         </div>
-{/*Navigation Cart Starts Here...............................*/}
+        {/*Navigation Cart Starts Here...............................*/}
 
-{/*Account modal Starts Here...............................*/}
-{modalOpen && <Modal setOpenModal={setModalOpen} />}
-{/*Account modal ends Here...............................*/}
+        {/*Account modal Starts Here...............................*/}
+        {modalOpen && <Modal setOpenModal={setModalOpen} />}
+        {/*Account modal ends Here...............................*/}
 
-{/*Cart modal Starts Here...............................*/}
+        {/*Cart modal Starts Here...............................*/}
         {cartmodal && <CartModal setCartModal={setcartModalopen} />}
-        
-{/*Cart modal Ends Here...............................*/}
+
+        {/*Cart modal Ends Here...............................*/}
       </div>
     </header>
   );

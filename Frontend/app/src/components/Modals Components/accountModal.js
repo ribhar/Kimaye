@@ -9,11 +9,12 @@ const Button = styled.button`
   color: white;
   padding: 10px 20px;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 10px;
 `;
 function Modal({ setOpenModal }) {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [data, setData] = React.useState("");
   const [login, setLogin] = React.useState(false);
   const navigate=useNavigate()
   const nav = () => {
@@ -26,8 +27,11 @@ function Modal({ setOpenModal }) {
     localStorage.removeItem("token");
   }
   React.useEffect(() => {
-    var data = JSON.parse(localStorage.getItem("Account"))
-    if (data) setLogin(true)
+    var x = JSON.parse(localStorage.getItem("Account"))
+    if (x) {
+      setLogin(true)
+      setData(x)
+    } 
   }, [])
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -73,7 +77,9 @@ function Modal({ setOpenModal }) {
             <p>Forget Your Password?</p>
             <input type="submit" className="loginButton" value="Login" />
           </form>
-        </div> : <Button onClick={() => handleLogout()}>LOGOUT</Button>}
+        </div> : <div style={{ textAlign: "center" }}><h2 style={{
+          color: "#437110",marginTop:"20px"}}>{data.FirstName}</h2>
+            <Button Button onClick={() => handleLogout()}>LOGOUT</Button></div>}
         <div style={{backgroundColor:'#3B5998',height:'35px',marginTop:'5%',color:'white',cursor:'pointer',display:'flex',gap:'30%'}}>
           <p style={{margin:'2%',fontSize:'18px'}}>Sign In With Facebook</p><FontAwesomeIcon icon={faFacebook} style={{height:"30px",borderRadius:'5px', cursor:"pointer",marginTop:'2px'}} />
         </div>
