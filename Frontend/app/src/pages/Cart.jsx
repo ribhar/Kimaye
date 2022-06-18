@@ -192,7 +192,7 @@ const Cart = () => {
                     <div>
                       <p>{item.desc}</p>
                       <br />
-                      <p>{item.wt}</p>
+                      <p>1kg</p>
                     </div>
                   </Td1>
                   <Td>₹{item.mrp}</Td>
