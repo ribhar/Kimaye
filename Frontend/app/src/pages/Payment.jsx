@@ -6,13 +6,42 @@ import axios from "axios";
 import { useEffect } from "react";
 import Paymentproduct from "./Paymentproduct";
 import { Paymentaddress } from "./Paymentaddress";
+import { useDispatch, useSelector } from "react-redux";
+import {fetchcart, setPrice} from "../redux/action";
 
 function Payment() {
+
+  const [account,setAccount]=useState({})
+  const dispatch = useDispatch();
   const [fromdata, setfromdata] = useState({});
+  const [data,setData]=useState([])
   const [togle, setTogle] = useState(false);
   const [allData, setallData] = useState([]);
+  const allCartdata = useSelector((state) => state.cartdata);
   const navigate = useNavigate();
-
+  const totalprice=useSelector(state=>state.totalprice)
+  useEffect(() => {
+    dispatch(fetchcart());
+    
+  }, [dispatch]);
+  useEffect(() => {
+    const dummyAccount = JSON.parse(localStorage.getItem("Account"))||{}
+    console.log(dummyAccount,"dummy")
+    setAccount(dummyAccount);
+    if (account) {
+      const Email = account.Email
+      const generatedData = allCartdata.filter(i => i.Email == Email)
+      
+      if (generatedData.length > 0) {
+        setData(generatedData)
+        dispatch(setPrice(generatedData))
+      }
+    }
+    else {
+      alert("Login to Continue")
+      navigate("/auth")
+    }
+  },[allCartdata])
   const handleclick = () => {
     // console.log("hello click");
   };
@@ -80,7 +109,7 @@ function Payment() {
                       alt=""
                     />
                   </div>
-                  <div className={styled.loginprofiledata}>Md shahbaj alam</div>
+                  <div className={styled.loginprofiledata}><h2>{account.FirstName}</h2></div>
                 </div>
                 <div className={styled.Input}>
                   <input
@@ -283,8 +312,8 @@ function Payment() {
           )}
 
           <div className={styled.leftdiv}>
-            {allData.map((elem) => (
-              <Paymentproduct key={elem.id} {...elem} />
+            {data.map((elem) => (
+              <Paymentproduct totalprice={totalprice} key={elem.id} {...elem} />
             ))}
           </div>
         </div>

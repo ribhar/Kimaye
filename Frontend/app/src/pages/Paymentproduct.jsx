@@ -1,20 +1,22 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "../styles/payment.module.css";
 
 const Paymentproduct = (props) => {
-  const { imgurl, name, price, weight } = props;
+ 
+  const { imageUrl, title, price, totalprice } = props;
   return (
     <div className={styled.maindiv}>
       <div className={styled.datadiv}>
-        <div className={styled.leftimg}>
-          <img src={imgurl} alt="pic" />{" "}
+        <div className={styled.leftimg} style={{marginBottom:'20px'}}>
+          <img src={imageUrl} alt="pic" height="80px" width="80px"  />{" "}
         </div>
         <div className={styled.leftname}>
-          {name} {weight} 
+          {title} 
         </div>
         <div className={styled.leftprice}>
-          {"₹"}
-          {price}
+         <h2> {"₹"}
+          {price}</h2>
         </div>
       </div>
       <div className={styled.bottomborder}></div>
@@ -40,7 +42,7 @@ const Paymentproduct = (props) => {
           <div className={styled.total}>Total</div>
           <div className={styled.inr}>
             {"INR"} {"₹"}
-            {price}
+            {totalprice}
           </div>
         </div>
       </div>
