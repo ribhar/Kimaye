@@ -26,7 +26,8 @@ export const reducer = (state = inits, action) => {
         productsData:action.payload,
     }
     }
-    case CARTDATA : {
+    case CARTDATA: {
+      
       return {
         ...state,
         cartdata : action.payload,

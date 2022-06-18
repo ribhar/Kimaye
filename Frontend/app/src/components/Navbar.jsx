@@ -17,18 +17,18 @@ const Navbar = () => {
   const allCartdata = useSelector((state) => state.cartdata);
   console.log(cartData.length)
   const dispatch = useDispatch();
-  useEffect(() => {
+  
     const account = JSON.parse(localStorage.getItem("Account"));
     if (account) {
       const Email = account.Email;
       const generatedData = allCartdata.filter((i) => i.Email == Email);
       if (generatedData.length > 0) {
         dispatch(setCount(generatedData.length));
-        
       }
     } else {
       dispatch(setCount(0));
     }
+  useEffect(() => {
     dispatch(fetchcart());
   }, [dispatch]);
   return (
