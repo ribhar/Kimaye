@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 
 function CartModal({ setCartModal }) {
+  const count=useSelector(state=>state.count)
   const cartData=useSelector(state=> state.cartdata)
   console.log(cartData)
   return (
@@ -20,7 +21,7 @@ function CartModal({ setCartModal }) {
            Close X
           </button>
         </div>
-       {cartData.length>0 ? (<div>done</div>): (<div style={{marginTop:'10%',display:'flex'}}>
+       {count>0 ? (<div>done</div>): (<div style={{marginTop:'10%',display:'flex'}}>
         <FontAwesomeIcon icon={faCartPlus} style={{height:'30px',marginLeft:'10%',}}/><p style={{marginLeft:'5%',fontSize:'14px',marginTop:'5px'}}>No Products In The Cart</p>
        </div>)}
       
