@@ -40,7 +40,7 @@ function Modal({ setOpenModal }) {
       Email: email,
       Password: password
     }
-    const URL = "http://localhost:8080/auth/login"
+    const URL = "https://kimayebackendclone.herokuapp.com/auth/login"
     axios.post(URL, user).then(print => {
       if (print.data.Message == "Invalid credentials")
         alert("Invalid Credentials");

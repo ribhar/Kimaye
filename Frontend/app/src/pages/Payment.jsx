@@ -49,12 +49,7 @@ function Payment() {
     navigate("/cart")
   };
 
-  const getdata = () => {
-    axios
-      .get("http://localhost:8000/firutdata")
-      .then(({ data }) => setallData(data))
-      .catch((err) => console.log(err));
-  };
+
 
   useEffect(() => {
     getdata();

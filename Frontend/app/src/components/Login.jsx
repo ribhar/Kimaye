@@ -32,7 +32,7 @@ function Login({login,setLogin}) {
       Password: password
     }
     setData(user)
-    const URL = "http://localhost:8080/auth/login"
+    const URL = "https://kimayebackendclone.herokuapp.com/auth/login";
     axios.post(URL, user).then(print => {
       if (print.data.Message == "Invalid credentials")
         alert("Invalid Credentials");
