@@ -7,16 +7,28 @@ import Modal from "./Modals Components/accountModal";
 import CartModal from "./Modals Components/cartModel";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchcart } from "../redux/action";
+import { fetchcart,setCount } from "../redux/action";
 const Navbar = () => {
   const navigate=useNavigate()
   const [cartmodal, setcartModalopen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const cartData=useSelector(state =>state.cartdata)
+  const cartData = useSelector(state => state.cartdata)
+  const count = useSelector((state) => state.count);
+  const allCartdata = useSelector((state) => state.cartdata);
   console.log(cartData.length)
   const dispatch = useDispatch();
-
   useEffect(() => {
+    const account = JSON.parse(localStorage.getItem("Account"));
+    if (account) {
+      const Email = account.Email;
+      const generatedData = allCartdata.filter((i) => i.Email == Email);
+      if (generatedData.length > 0) {
+        dispatch(setCount(generatedData.length));
+        
+      }
+    } else {
+      dispatch(setCount(0));
+    }
     dispatch(fetchcart());
   }, [dispatch]);
   return (
@@ -72,7 +84,7 @@ const Navbar = () => {
               setcartModalopen(true);
             }}
             style={{ height: "23px", cursor: "pointer" }}
-          />
+          /><p>{count}</p>
           {/*Navigation Cart ends Here...............................*/}
         </div>
         {/*Navigation Cart Starts Here...............................*/}

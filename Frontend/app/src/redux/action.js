@@ -4,8 +4,14 @@ export const DESDATA = "DESDATA";
 export const FILTER = "FILTER";
 export const CARTDATA = "CARTDATA"
 export const SETPRICE = "SETPRICE";
+export const SETCOUNT= "SETCOUNT"
 export const getdata = (payload) => ({
   type: GETDATA,
+  payload,
+});
+
+export const setCount = (payload) => ({
+  type: SETCOUNT,
   payload,
 });
 

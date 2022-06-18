@@ -1,10 +1,11 @@
-import { CARTDATA, DESDATA, FILTER, GETDATA, SETPRICE } from "./action";
+import { CARTDATA, DESDATA, FILTER, GETDATA, SETPRICE,SETCOUNT } from "./action";
 
 const inits = {
   productsData: [],
   desData : {},
   cartdata : [],
-  totalprice : 0,
+  totalprice: 0,
+  count: 0
 };
 
 export const reducer = (state = inits, action) => {
@@ -30,6 +31,13 @@ export const reducer = (state = inits, action) => {
         ...state,
         cartdata : action.payload,
         
+      }
+    }
+    case SETCOUNT: {
+      return {
+        ...state,
+        count: action.payload
+
       }
     }
     case SETPRICE: {

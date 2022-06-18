@@ -25,6 +25,7 @@ function Modal({ setOpenModal }) {
     setLogin(!login);
     localStorage.removeItem("Account")
     localStorage.removeItem("token");
+    navigate("/")
   }
   React.useEffect(() => {
     var x = JSON.parse(localStorage.getItem("Account"))
