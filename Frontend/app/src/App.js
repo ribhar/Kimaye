@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Main from "./components/Main"
@@ -10,6 +14,7 @@ function App() {
     <div style={{position:'relative',zIndex:'2',backgroundColor:'white'}}><Navbar/></div>
        <Main />
       <Footer/>
+
     </div>
   );
 }
