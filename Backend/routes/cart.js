@@ -10,6 +10,7 @@ cartRouter.get("/get", async (req, res) => {
 
 cartRouter.post("/post", (req, res) => {
   let cartitem = new cart(req.body);
+  console.log(req.body);
   cartitem.save((err, success) => {
     if (err) {
       return res.status(400).send({ message: "Failed to add" });

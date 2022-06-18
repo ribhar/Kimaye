@@ -18,7 +18,7 @@ const Input = styled.input `
 const Label = styled.label`
 font-size: 16px;
 `
-function Register() {
+function Register({auth,setAuth}) {
     const [data, setData] = React.useState({})
     const [first, setFirst] = React.useState("")
     const [last, setLast] = React.useState("");
@@ -32,11 +32,14 @@ function Register() {
             Email:email,
            Password:password
         }
-      setData(user)
         const URL = "http://localhost:8080/auth/signup";
-      axios.post(URL, data)
-      .then(print=> {
-    console.log(print.data)
+      axios.post(URL, user)
+        .then(print => {
+        if (print.data.Message == "Something went wrong") alert("Something Went wrong, Try again");
+        else if (print.data.Message == "Account Exist")
+          alert("This Account already exists, please Login to continue");
+        else alert("Registration Successfull");
+        setAuth(!auth)
       })
       
     }

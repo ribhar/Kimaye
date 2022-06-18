@@ -5,10 +5,18 @@ const authRoute = Router()
 
 authRoute.post("/signup", async (req, res) => {
     const user = new authM(req.body)
-    user.save((err, success) => {
-        if (err) res.status(500).send({ Message: "Signup error" })
-        else res.status(201).send({ Message: "Signup Success",  ...success })
-    })
+    try {
+        const search = await authM.find({ Email: user.Email })
+        if (search.length >0) return res.end({ Message: "Account Exist" })
+        else user.save((err, success) => {
+            if (err) res.status(500).send({ Message: "Signup error" })
+            else res.status(201).send({ Message: "Signup Success", ...success })
+        }) 
+    }
+    catch (err) {
+        res.send({ Message: "Account Exist" })
+    }
+    
 })
 authRoute.post("/login", async (req, res) => {
     const token = v4()
@@ -20,7 +28,7 @@ authRoute.post("/login", async (req, res) => {
         else res.send({ Message: "Invalid credentials" })
     }
     catch (e) {
-        return res.status(401).end({ Message: "Invalid credentials" })
+        return res.end({ Message: "Invalid credentials" })
     }
 })
 module.exports = authRoute

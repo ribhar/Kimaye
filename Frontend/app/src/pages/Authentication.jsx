@@ -49,6 +49,7 @@ function Authentication() {
   const handleLogout = () => {
     setLogin(!login);
     localStorage.removeItem("Account")
+    localStorage.removeItem("token");
   }
   React.useEffect(() => {
     var data = JSON.parse(localStorage.getItem("Account"))
@@ -99,7 +100,7 @@ function Authentication() {
       </Green>
       <Container>
         <Child>
-          {auth ? <Login login={login} setLogin={setLogin} /> : <Register />}
+          {auth ? <Login login={login} setLogin={setLogin} /> : <Register  auth={auth} setAuth={setAuth} />}
         </Child>
         <Line></Line>
         <Child style={{ width: "42%" }}>
