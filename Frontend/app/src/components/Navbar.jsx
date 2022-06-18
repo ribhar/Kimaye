@@ -17,8 +17,12 @@ const Navbar = () => {
   const allCartdata = useSelector((state) => state.cartdata);
   console.log(cartData.length)
   const dispatch = useDispatch();
+<<<<<<< Updated upstream
   
     const account = JSON.parse(localStorage.getItem("Account"));
+=======
+  const account = JSON.parse(localStorage.getItem("Account"));
+>>>>>>> Stashed changes
     if (account) {
       const Email = account.Email;
       const generatedData = allCartdata.filter((i) => i.Email == Email);
@@ -29,6 +33,10 @@ const Navbar = () => {
       dispatch(setCount(0));
     }
   useEffect(() => {
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
     dispatch(fetchcart());
   }, [dispatch]);
   return (
