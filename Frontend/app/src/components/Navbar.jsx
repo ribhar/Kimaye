@@ -8,6 +8,7 @@ import CartModal from "./Modals Components/cartModel";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchcart,setCount } from "../redux/action";
+import { BsHandbag } from "react-icons/bs"
 const Navbar = () => {
   const navigate=useNavigate()
   const [cartmodal, setcartModalopen] = useState(false);
@@ -79,14 +80,14 @@ const Navbar = () => {
           {/*Navigation Account Ends Here...............................*/}
 
           {/*Navigation Cart Starts Here...............................*/}
-          <FontAwesomeIcon
-            icon={faCartShopping}
+          <BsHandbag
+            size={25}
             onClick={() =>{
               //navigate("/cart")
               setcartModalopen(true);
             }}
-            style={{ height: "23px", cursor: "pointer" }}
-          /><p>{count}</p>
+            style={{cursor: "pointer",marginBottom:'5px' }}
+          /><p style={{color:'white',backgroundColor:'#98CB4C',height:'18px',borderRadius:'50%',padding:'1.5px 5px 5px 5px',marginTop:'-9px',marginLeft:'-24px'}}>{count}</p>
           {/*Navigation Cart ends Here...............................*/}
         </div>
         {/*Navigation Cart Starts Here...............................*/}

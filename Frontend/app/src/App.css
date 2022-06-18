@@ -290,3 +290,20 @@ margin-bottom: 15px;
   background-color:black;
   color:white
 }
+.modalButton{
+  background-color: #ECECEC;
+  
+  color: #98cb4c;
+  height: 50px;
+  margin-bottom: 10px;
+
+  text-align: center;
+  cursor: pointer;
+  font-size:18px;
+  width: 100%;
+  border: none;
+}
+.modalButton:hover{
+  color:black;
+ background-color: grey; ;
+}

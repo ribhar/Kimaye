@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchdata, fetchfilter } from "../redux/action";
 import Productcard from "./Productcard";
 import "./product.css";
-import { Link } from "react-router-dom";
+import { IoIosHome } from "react-icons/io";
+
 
 export const Products = () => {
   let productsData = useSelector((state) => state.productsData);
@@ -18,7 +19,6 @@ export const Products = () => {
  
   return (
     <div className="productbody">
-      <Link to="/cart">cart</Link>
       <div className="category">
         <p onClick={() =>{
           dispatch(fetchdata())
@@ -35,11 +35,8 @@ export const Products = () => {
       </div>
       <div className="home">
         <div>
-          <img
-            className="homelogo"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmAthy1j-eIciOQ5cITmu-XFyKNQJqe_UgNg&usqp=CAU"
-            alt="logo"
-          />
+         
+          <IoIosHome style={{marginBottom:"13px",marginRight:"2px"}}/>
           <p>
             <span className="homebtn">Home/</span>
             {name}

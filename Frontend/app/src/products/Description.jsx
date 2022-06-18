@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { AddToCart, fetchdes, incordec } from "../redux/action";
 import "./description.css";
 import {useNavigate} from "react-router-dom"
-
+import { IoIosHome } from "react-icons/io";
 const Description = () => {
   const [Email, setEmail] = React.useState(false)
   const navigate= useNavigate();
@@ -37,10 +37,7 @@ const Description = () => {
     <div className="desbody">
      
       <div className="upperlink">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmAthy1j-eIciOQ5cITmu-XFyKNQJqe_UgNg&usqp=CAU"
-          alt="hlogo"
-        />
+      <IoIosHome style={{marginRight:"2px"}}/>
         <p>
           Home / All fruits /{" "}
           <span className="uppertitle">{desData.title}</span>
