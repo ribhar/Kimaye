@@ -116,6 +116,7 @@ const quants = {
 function CartModal({ setCartModal }) {
 
   const [cartdata, setCartdata] = useState([])
+
   const allCartdata = useSelector((state) => state.cartdata);
   const totalprice = useSelector((state) => state.totalprice);
   console.log(cartdata, totalprice);
@@ -262,16 +263,22 @@ useEffect(() => {
                     </div>
 
                     <button className="modalButton"
-                   onClick={() =>navigate("/cart")}
+                   onClick={() =>{navigate("/cart")
+                  
+                   setCartModal(false);
+                  }
+                  
+                  }
                     >
                      CHECKOUT
                     </button>
                     <button
                     className="modalButton"
-                      onClick={() => navigate("/products")}
-                      style={{
-                       
-                      }}
+                      onClick={() => {navigate("/products")
+                    
+                      setCartModal(false);
+                    }}
+                      
                     >
                       CONTINUE SHOPPING
                     </button>
