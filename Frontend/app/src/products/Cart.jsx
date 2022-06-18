@@ -334,6 +334,7 @@ const Cart = () => {
                     <h3>₹{totalprice + Math.floor(totalprice * 0.12)}</h3>
                   </div>
                   <button
+                    onClick={() => navigate("/payment")}
                     style={{
                       backgroundColor: "#98cb4c",
                       color: "white",

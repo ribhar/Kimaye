@@ -15,7 +15,7 @@ function Main() {
     <>
       <Routes>
 
-        <Route path='payment' element={<Payment/>}></Route>
+        <Route path='/payment' element={<Payment/>}></Route>
 
         <Route path="/auth" element={<Authentication />}></Route>
         <Route path="/otp" element={<Otp/>}></Route>
