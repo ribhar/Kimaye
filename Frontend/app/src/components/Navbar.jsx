@@ -20,18 +20,20 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const account = JSON.parse(localStorage.getItem("Account"));
-
-    if (account) {
-      const Email = account.Email;
-      const generatedData = allCartdata.filter((i) => i.Email == Email);
-      if (generatedData.length > 0) {
-        dispatch(setCount(generatedData.length));
+  counter()
+  function counter() {
+      if (account) {
+        const Email = account.Email;
+        const generatedData = allCartdata.filter((i) => i.Email == Email);
+        if (generatedData.length >= 0) {
+          dispatch(setCount(generatedData.length));
+        }
+      } else {
+        dispatch(setCount(0));
       }
-    } else {
-      dispatch(setCount(0));
     }
   useEffect(() => {
-
+    counter()
     dispatch(fetchcart());
   }, [dispatch]);
   return (

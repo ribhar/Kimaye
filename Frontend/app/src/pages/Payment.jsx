@@ -85,7 +85,10 @@ function Payment() {
     <div>
       {/* <h1>Payment</h1> */}
       <>
-        <div style={{justifyContent: 'space-around'}} className={styled.components}>
+        <div
+          style={{ justifyContent: "space-around" }}
+          className={styled.components}
+        >
           {!togle ? (
             <div className={styled.rightdiv}>
               <div className={styled.rightinnerdiv}>
@@ -322,12 +325,18 @@ function Payment() {
             </div>
             <div className={styled.inputdata}>
               <input
+                style={{ width: "100%", margin: "10px 0px" }}
                 type="text"
                 name="giftcard"
                 placeholder="Gift card"
                 className={styled.inputdiv}
               />
-              <button className={styled.applydone}>Apply</button>
+              <button
+                style={{ width: "100%", margin: "10px 0px" }}
+                className={styled.applydone}
+              >
+                Apply
+              </button>
               <div className={styled.bottomborder1}></div>
               <div className={styled.subtotal}>
                 <div className={styled.subtotal1}>Subtotal</div>
@@ -340,10 +349,7 @@ function Payment() {
               <div className={styled.bottomborder2}></div>
               <div className={styled.finalytotal}>
                 <div className={styled.total}>Total</div>
-                <div className={styled.inr}>
-                  {"INR"} {"₹"}
-                  {totalprice}
-                </div>
+                <div className={styled.inr}>{`₹${totalprice}`}</div>
               </div>
             </div>
           </div>

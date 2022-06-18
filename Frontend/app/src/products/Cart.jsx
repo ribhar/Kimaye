@@ -67,7 +67,7 @@ const Button = styled.button`
 const Quantity = styled.div`
   border: 1px solid gray;
   width: 40px;
-  height: 95%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -296,7 +296,7 @@ const Cart = () => {
                 backgroundColor: "#f8f8f8",
                 display: "flex",
                 gap: "20px",
-                padding: " 0 20px",
+                padding: "30px",
               }}
             >
               <div style={{ width: "50%", textAlign: "center" }}>
@@ -322,16 +322,10 @@ const Cart = () => {
                     <h4>₹{totalprice}</h4>
                   </div>
                   <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
+                    style={{ display: "flex", justifyContent: "space-between", margin: "10px 0px" }}
                   >
-                    <h4>GST 12%</h4>
-                    <h4>₹{Math.floor(totalprice * 0.12)}</h4>
-                  </div>
-                  <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
-                  >
-                    <h3>TOTAL</h3>
-                    <h3>₹{totalprice + Math.floor(totalprice * 0.12)}</h3>
+                    <h3 >TOTAL</h3>
+                    <h3>₹{totalprice}</h3>
                   </div>
                   <button
                     onClick={() => navigate("/payment")}

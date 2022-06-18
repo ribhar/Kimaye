@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import { IoIosHome } from "react-icons/io";
 const Green = styled.div`
   background-color: #437110;
   height: 100px;
@@ -69,21 +70,7 @@ function Authentication() {
             alignItems: "center",
           }}
         >
-          <svg
-            style={{
-              backgroundColor: "white",
-              borderRadius: "30px",
-              marginRight: "5px",
-            }}
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="bi bi-house-door"
-            viewBox="0 0 16 16"
-          >
-            <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
-          </svg>
+          <IoIosHome style={{ marginRight: "2px", color: "white" }} />
           <Link
             to="/home"
             style={{
@@ -100,7 +87,11 @@ function Authentication() {
       </Green>
       <Container>
         <Child>
-          {auth ? <Login login={login} setLogin={setLogin} /> : <Register  auth={auth} setAuth={setAuth} />}
+          {auth ? (
+            <Login login={login} setLogin={setLogin} />
+          ) : (
+            <Register auth={auth} setAuth={setAuth} />
+          )}
         </Child>
         <Line></Line>
         <Child style={{ width: "42%" }}>
@@ -125,21 +116,7 @@ function Authentication() {
               alignItems: "center",
             }}
           >
-            <svg
-              style={{
-                backgroundColor: "white",
-                borderRadius: "30px",
-                marginRight: "5px",
-              }}
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-house-door"
-              viewBox="0 0 16 16"
-            >
-              <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
-            </svg>
+            <IoIosHome style={{ marginRight: "2px", color: "white" }} />
             <Link
               to="/home"
               style={{
@@ -159,8 +136,8 @@ function Authentication() {
             style={{
               display: "flex",
               alignItems: "center",
-                justifyContent: "center",
-              marginTop: "30px"
+              justifyContent: "center",
+              marginTop: "30px",
             }}
           >
             <h1 style={{ color: "#437110 ", marginRight: "5px" }}>Name</h1>
