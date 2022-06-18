@@ -8,7 +8,7 @@ function Otp(){
     const navigate = useNavigate()
     const Div = {
         width: "500px",
-        height: "400px",
+        height: "300px",
         backgroundColor: "whitesmoke",
         margin: "auto",
         padding: "50px",
@@ -36,10 +36,10 @@ function Otp(){
     },[])
     const style = {
       textAlign: "center",
-    width: "30px",
-    height: "30px",
+    width: "40px",
+    height: "40px",
     marginRight: "10px",
-    fontSize: "18px",
+    fontSize: "14px",
         padding: "10px",
     cursor: "pointer",
   };
@@ -71,7 +71,7 @@ function Otp(){
     <div
       style={{
         textAlign: "center",
-        height: "400px",
+        height: "300px",
         padding: "100px",
       }}
     >
@@ -81,7 +81,8 @@ function Otp(){
           {count} Seconds Remaing
         </h2>
         {new Array(4).fill(0).map((i, index) => (
-          <input
+          <input 
+            style={style}
             required
             onChange={(event) => handleChange(event)}
             onKeyUp={(e) => {
@@ -102,7 +103,6 @@ function Otp(){
             }}
             maxLength={1}
             type="text"
-            style={style}
             key={index}
           />
         ))}

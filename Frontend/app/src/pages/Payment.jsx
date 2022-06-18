@@ -45,7 +45,9 @@ function Payment() {
   const handleclick = () => {
     // console.log("hello click");
   };
-  const handlepclick = () => {};
+  const handlepclick = () => {
+    navigate("/cart")
+  };
 
   const getdata = () => {
     axios
@@ -83,7 +85,7 @@ function Payment() {
     <div>
       {/* <h1>Payment</h1> */}
       <>
-        <div className={styled.components}>
+        <div style={{justifyContent: 'space-around'}} className={styled.components}>
           {!togle ? (
             <div className={styled.rightdiv}>
               <div className={styled.rightinnerdiv}>
@@ -109,7 +111,9 @@ function Payment() {
                       alt=""
                     />
                   </div>
-                  <div className={styled.loginprofiledata}><h2>{account.FirstName}</h2></div>
+                  <div className={styled.loginprofiledata}>
+                    <h2>{account.FirstName}</h2>
+                  </div>
                 </div>
                 <div className={styled.Input}>
                   <input
@@ -127,7 +131,7 @@ function Payment() {
                 <div className={styled.fromdata}>
                   <form onSubmit={handlesubmit} className={styled.form}>
                     <select
-                    // required
+                      // required
                       name="new address"
                       className={styled.select}
                       onChange={handlechange}
@@ -137,7 +141,7 @@ function Payment() {
                       </option>
                     </select>
                     <select
-                    // required
+                      // required
                       name="india"
                       className={styled.select}
                       onChange={handlechange}
@@ -149,7 +153,7 @@ function Payment() {
                     <div className={styled.username}>
                       <div className={styled.inputdata}>
                         <input
-                        required
+                          required
                           type="text"
                           name=" First_name"
                           className={styled.name}
@@ -159,7 +163,7 @@ function Payment() {
                       </div>
                       <div className={styled.inputdata1}>
                         <input
-                        required
+                          required
                           type="text"
                           name="last_name"
                           className={styled.lastname}
@@ -169,7 +173,7 @@ function Payment() {
                       </div>
                     </div>
                     <input
-                    required
+                      required
                       type="text"
                       name="adress"
                       className={styled.adress}
@@ -178,7 +182,6 @@ function Payment() {
                     />
                     <br />
                     <input
-                    required
                       type="text"
                       className={styled.apartment}
                       name="apartment"
@@ -189,7 +192,7 @@ function Payment() {
                     <div className={styled.city}>
                       <div className={styled.citys}>
                         <input
-                        required
+                          required
                           type="text"
                           name="city"
                           placeholder="City"
@@ -242,7 +245,7 @@ function Payment() {
                           <option name="Nagaland">Nagaland</option>
                           <option name="Odisha">Odisha</option>
                           <option name="Puducharry">Puducharry</option>
-                          <option name="Panjab">Panjab</option>
+                          <option name="Panjab">Punjab</option>
                           <option name="Rajasthan">Rajasthan</option>
                           <option name="Sikkim">Sikkim</option>
                           <option name="Tamil Nadu">Tamil Nadu</option>
@@ -255,7 +258,7 @@ function Payment() {
                       </div>
                       <div>
                         <input
-                        required
+                          required
                           type="number"
                           className={styled.pin}
                           name="pincode"
@@ -265,7 +268,7 @@ function Payment() {
                       </div>
                     </div>
                     <input
-                    required
+                      required
                       type="number"
                       className={styled.number}
                       name="mobile_name"
@@ -275,12 +278,13 @@ function Payment() {
                     <div className={styled.button}>
                       <div>
                         <input
+                          style={{ fontSize: "14px", padding: "10px" }}
                           type="submit"
                           value="Continue to shipping"
                           className={styled.btn}
                         />
                       </div>
-                      <div>
+                      <div style={{ marginTop: "30px" }}>
                         <p className={styled.ptag} onClick={handlepclick}>
                           Return to cart
                         </p>
@@ -310,11 +314,38 @@ function Payment() {
           ) : (
             <Paymentaddress />
           )}
-
-          <div className={styled.leftdiv}>
-            {data.map((elem) => (
-              <Paymentproduct totalprice={totalprice} key={elem.id} {...elem} />
-            ))}
+          <div>
+            <div className={styled.leftdiv}>
+              {data.map((elem) => (
+                <Paymentproduct key={elem.id} {...elem} />
+              ))}
+            </div>
+            <div className={styled.inputdata}>
+              <input
+                type="text"
+                name="giftcard"
+                placeholder="Gift card"
+                className={styled.inputdiv}
+              />
+              <button className={styled.applydone}>Apply</button>
+              <div className={styled.bottomborder1}></div>
+              <div className={styled.subtotal}>
+                <div className={styled.subtotal1}>Subtotal</div>
+                <div className={styled.rupess}>
+                  {"₹"} {totalprice}{" "}
+                </div>
+                <div className={styled.shipping}>Shipping</div>
+                <div className={styled.free}>Free</div>
+              </div>
+              <div className={styled.bottomborder2}></div>
+              <div className={styled.finalytotal}>
+                <div className={styled.total}>Total</div>
+                <div className={styled.inr}>
+                  {"INR"} {"₹"}
+                  {totalprice}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </>

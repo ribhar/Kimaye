@@ -14,9 +14,7 @@ function Main() {
   return (
     <>
       <Routes>
-
         <Route path='/payment' element={<Payment/>}></Route>
-
         <Route path="/auth" element={<Authentication />}></Route>
         <Route path="/otp" element={<Otp/>}></Route>
         <Route path="/" element={<Home/>}>Home</Route>
