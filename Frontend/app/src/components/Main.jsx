@@ -19,7 +19,7 @@ function Main() {
         <Route path="/otp" element={<Otp/>}></Route>
         <Route path="/" element={<Home/>}>Home</Route>
         <Route path={"/products"} element={<Products/>}/>
-     <Route path={'/cart'} element={<Cart/>}/>
+    <Route path={'/cart'} element={<Cart/>}/>
     <Route path={'/products/description/:id'}element={<Description/>}  />
         
       </Routes>
