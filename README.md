@@ -75,7 +75,7 @@ As we never really stop learning, This was our 2nd project using react and 1st w
 - Setting up API requests using Express and Deployment on Heroku
 - Algorithm building for users data such as, items in cart, location etc.
 - Playing with animation to get desired output
-- Using redux to manipulate the features
+- Using redux to for CRUD operations
 - building custom filters
 - Using style components for better styling experience
 
