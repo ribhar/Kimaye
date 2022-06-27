@@ -73,7 +73,7 @@ go to http://localhost:3000
 As we never really stop learning, This was our 2nd project using react and 1st with backend and database, and as usual there were a lot of chalenges with the learning  we experienced. some of the highlighted learning were:-
 - Building Database using mongodb and deployment using Mongo Atlas
 - Setting up API requests using Express and Deployment on Heroku
-- Algorithmsn writing for users data such as, items in cart, location etc.
+- Algorithm building for users data such as, items in cart, location etc.
 - Playing with animation to get desired output
 - Using redux to manipulate the features
 - building custom filters
