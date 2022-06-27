@@ -83,4 +83,4 @@ We are in our learning phase and this is our 2nd clone using react and 1st clone
 - [@Mayur Shinde](https://github.com/mayur-ms-2310)
 - [@Shubham Paswan](https://github.com/spaswan141)
 - [@Satyajeetn Sahoo](https://github.com/SatsAjeet)
-- [@Shahbaj Alam](https://github.com/mdshahbajalam7)
+- [@Md Shahbaj Alam](https://github.com/mdshahbajalam7)
