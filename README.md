@@ -8,12 +8,12 @@ A Project done during Unit-5 construct week of Masai School
 #### Tech Stack-
 
 <p float="left">
-   <img src="https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png" width="100" height="100">
-  <img src="https://cdn.freebiesupply.com/logos/large/2x/redux-logo-svg-vector.svg" width="100" height="100">
-  <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_640.png" width="100" height="100">
-  <img src="https://avatars.githubusercontent.com/u/5658226?s=200&v=4" width="100" height="100">
-  <img src="https://github.com/mongodb/mongo/raw/master/docs/leaf.svg" width="100" height="100">
- </p>
+   <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://github.com/ribhar/ribhar/blob/main/giticons/icons8-mongodb.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="giticons/express.png" alt="express" width="40" height="40"/> </a>
+  <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="giticons/icons8-react-native.svg" alt="react" width="40" height="40"/> </a> <a href="https://redux.js.org/" target="_blank" rel="noreferrer"> <img src="giticons/icons8-redux.svg" alt="redux" width="40" height="40"/> 
+  <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="giticons/icons8-node-js.svg" alt="nodejs" width="40" height="40"/> </a>
+   <a href="https://mongoosejs.com/" target="_blank" rel="noreferrer"> <img src="giticons/mongoose.png" alt="mongoose" width="60" height="30"/> </a>
+  <a href="https://dashboard.heroku.com/" target="_blank" rel="noreferrer"> <img src="giticons/icons8-heroku.svg" alt="heroku" width="40" height="40"/> </a>
+</p>
  
  ### <u>Deployed Link</u>
 
