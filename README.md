@@ -51,7 +51,7 @@ View in Browser
 go to http://localhost:3000
 ```
 
-## Functionalities associated with this website
+## Functionalities of the website
 
 1. A user can register his account on the website.
 2. User can log in using credentials given during registration.
@@ -70,14 +70,14 @@ go to http://localhost:3000
   
 ## Lessons Learned
 
-We are in our learning phase and this is our 2nd clone using react and 1st clone with backend and database, so faced multiple issues to build this site. These are some topic that challenges us to make this:-
-- Making Proper Database using mongodb and deploying it in Mongo Atlas
-- Making Backend using Express and Deploying in Heroku and making Api
-- Making specific cartitems for individual users
+As we never really stop learning, This was our 2nd project using react and 1st with backend and database, and as usual there were a lot of chalenges with the learning  we experienced. some of the highlighted learning were:-
+- Building Database using mongodb and deployment using Mongo Atlas
+- Setting up API requests using Express and Deployment on Heroku
+- Algorithmsn writing for users data such as, items in cart, location etc.
 - Playing with animation to get desired output
 - Using redux to manipulate the features
-- Making custom filters
-- Using various styling method so that our clone could look as original as possible
+- building custom filters
+- Using style components for better styling experience
 
 ## Contributors
 
