@@ -8,8 +8,8 @@ A Project done during Unit-5 construct week of Masai School
 #### Tech Stack-
 
 <p float="left">
-   <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://github.com/ribhar/ribhar/blob/main/giticons/icons8-mongodb.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="giticons/express.png" alt="express" width="40" height="40"/> </a>
-  <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="giticons/icons8-react-native.svg" alt="react" width="40" height="40"/> </a> <a href="https://redux.js.org/" target="_blank" rel="noreferrer"> <img src="giticons/icons8-redux.svg" alt="redux" width="40" height="40"/> 
+   <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://github.com/ribhar/ribhar/blob/main/giticons/icons8-mongodb.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="" alt="express" width="40" height="40"/> </a>
+  <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://github.com/ribhar/ribhar/blob/main/giticons/icons8-react-native.svg" alt="react" width="40" height="40"/> </a> <a href="https://redux.js.org/" target="_blank" rel="noreferrer"> <img src="giticons/icons8-redux.svg" alt="redux" width="40" height="40"/> 
   <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="giticons/icons8-node-js.svg" alt="nodejs" width="40" height="40"/> </a>
    <a href="https://mongoosejs.com/" target="_blank" rel="noreferrer"> <img src="giticons/mongoose.png" alt="mongoose" width="60" height="30"/> </a>
   <a href="https://dashboard.heroku.com/" target="_blank" rel="noreferrer"> <img src="giticons/icons8-heroku.svg" alt="heroku" width="40" height="40"/> </a>
