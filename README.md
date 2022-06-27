@@ -77,10 +77,10 @@ We are in our learning phase and this is our 2nd clone using react and 1st clone
 - Making custom filters
 - Using various styling method so that our clone could look as original as possible
 
-## Authors
+## Contributors
 
-- [@Satyajeet](https://github.com/SatsAjeet)
-- [@Mayur](https://github.com/mayur-ms-2310)
-- [@Shubham](https://github.com/spaswan141)
-- [@Ritik](https://github.com/ribhar)
-- [@Shahbaj](https://github.com/mdshahbajalam7)
+- [@Ritik Bhardwaj](https://github.com/ribhar)
+- [@Mayur Shinde](https://github.com/mayur-ms-2310)
+- [@Shubham Paswan](https://github.com/spaswan141)
+- [@Satyajeetn Sahoo](https://github.com/SatsAjeet)
+- [@Shahbaj Alam](https://github.com/mdshahbajalam7)
